@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class AchievementsController < ApplicationController
-  before_action :set_achievement, only: %i[ show edit update destroy ]
+  before_action :set_achievement, only: %i[show edit update destroy]
 
   # GET /achievements or /achievements.json
   def index
@@ -7,8 +9,7 @@ class AchievementsController < ApplicationController
   end
 
   # GET /achievements/1 or /achievements/1.json
-  def show
-  end
+  def show; end
 
   # GET /achievements/new
   def new
@@ -16,8 +17,7 @@ class AchievementsController < ApplicationController
   end
 
   # GET /achievements/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /achievements or /achievements.json
   def create
@@ -25,7 +25,7 @@ class AchievementsController < ApplicationController
 
     respond_to do |format|
       if @achievement.save
-        format.html { redirect_to achievement_url(@achievement), notice: "Achievement was successfully created." }
+        format.html { redirect_to achievement_url(@achievement), notice: 'Achievement was successfully created.' }
         format.json { render :show, status: :created, location: @achievement }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class AchievementsController < ApplicationController
   def update
     respond_to do |format|
       if @achievement.update(achievement_params)
-        format.html { redirect_to achievement_url(@achievement), notice: "Achievement was successfully updated." }
+        format.html { redirect_to achievement_url(@achievement), notice: 'Achievement was successfully updated.' }
         format.json { render :show, status: :ok, location: @achievement }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +52,20 @@ class AchievementsController < ApplicationController
     @achievement.destroy
 
     respond_to do |format|
-      format.html { redirect_to achievements_url, notice: "Achievement was successfully destroyed." }
+      format.html { redirect_to achievements_url, notice: 'Achievement was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_achievement
-      @achievement = Achievement.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def achievement_params
-      params.require(:achievement).permit(:name, :description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_achievement
+    @achievement = Achievement.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def achievement_params
+    params.require(:achievement).permit(:name, :description)
+  end
 end
