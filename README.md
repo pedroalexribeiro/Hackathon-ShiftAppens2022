@@ -1,10 +1,11 @@
 # Shift Appens 2022
 
-Initial config:
+## Idea
 
-bin/rails g scaffold Donor name:string type:integer:index email:string:uniq:index password:digest bio:text
-bin/rails g scaffold Organization name:string description:text
-bin/rails g scaffold Event name:string description:text organization:references
-bin/rails g scaffold Achievement name:string description:text
-bin/rails g scaffold Activity name:string description:text source:references{polymorphic}
+A nossa ideia é incentivar as pessoas a cooperar com associações (organizações sem fins lucraticos) a ajudar
+Sensibilizados pelo clima atual de problemas humanitários como guerra 
+Permitir às pessoas ajudar o próximo mais facilmente
+Tornar o processo de doar e ajudar mais rápido e permitir a qualquer um ajudar
+
+Github: https://github.com/pedroalexribeiro/shiftappens2022
 
