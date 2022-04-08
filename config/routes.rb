@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     root to: redirect('/organization/'), as: :organization_authenticated_root
   end
   authenticated :donor do
-    root to: redirect('/donor/'), as: :donor_authenticated_root
+    root to: redirect('/donors/feed'), as: :donor_authenticated_root
   end
   #unauthenticated do
   #  root to: redirect('/'), as: :unauthenticated_root
@@ -28,6 +28,8 @@ Rails.application.routes.draw do
     resources :profiles, except: [:create]
     # Only allow creating donations
     resources :donations, only: [:create]
+    # Only allow accessing feed
+    resources :feed, only: [:index]
   end
 
   # Defines the root path route ("/")

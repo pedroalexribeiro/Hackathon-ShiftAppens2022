@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>Feed</title>
+        <style>
+            .background-h-gradient {
+                background: rgb(41,255,198);
+                background: linear-gradient(90deg, rgba(41,255,198,1) 0%, rgba(32,227,178,1) 25%, rgba(12,235,235,1) 50%, rgba(32,227,178,1) 75%, rgba(41,255,198,1) 100%);
+            }
+
+            .background-gradient {
+                background: #0cebeb;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            }
+
+            .btn-main {
+                /*Reset's every elements apperance*/
+                border: medium none;
+                border-spacing: 0;
+                font-size: 16px;
+                font-weight: normal;
+                line-height: 1.42rem;
+                list-style: none outside none;
+                margin: 0;
+                padding: 4px;
+                text-decoration: none;
+                text-indent: 0;
+                border-radius: 16px;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-8">
+                    <h1>D=</h1>
+                </div>
+                <div class="col-2 my-auto">
+                    <button class="btn-main background-h-gradient" style="width: 100%;">Global</button>
+                </div>
+                <div class="col-2 my-auto">
+                    <button style="width: 100%;">Local</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-9" style="background-color: red; min-height: 100vh;">
+                    <%= render 'partials/feed_post' %>
+                </div>
+                <div class="col-3" style="background-color: yellow;">
+                    
+                    <div id="user_section">
+                        <div class="row">
+                            <div class="col-4">
+    
+                            </div>
+                            <div class="col-8">
+                                <span>Marcos</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <span>Online for 30 minutes</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <span>+3 coins</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn btn-primary">Donate</button>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <span>total: 365 coins</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
