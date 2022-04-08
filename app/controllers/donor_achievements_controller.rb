@@ -1,0 +1,2 @@
+class DonorAchievementsController < ApplicationController
+end

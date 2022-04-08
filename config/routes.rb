@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :donations
+  resources :donor_achievements
   devise_for :organizations
   devise_for :donors
   get 'homepage/index'
