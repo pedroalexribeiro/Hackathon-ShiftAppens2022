@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class DonorsController < ApplicationController
+class ProfilesController < DonorBaseController
   before_action :set_donor, only: %i[show edit update destroy]
 
   # GET /donors or /donors.json

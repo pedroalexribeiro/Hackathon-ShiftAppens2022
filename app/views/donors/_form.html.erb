@@ -1,4 +1,4 @@
-<%= form_with(model: donor) do |form| %>
+<%= form_with(model: donor, data: { turbo: false }) do |form| %>
   <% if donor.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(donor.errors.count, "error") %> prohibited this donor from being saved:</h2>

@@ -5,7 +5,6 @@ class Donor < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_secure_password
 
   # Active Record Blob to save images
   has_one_attached :avatar, dependent: :destroy
