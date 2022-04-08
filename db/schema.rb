@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_08_165333) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_08_185422) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,6 +59,25 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_08_165333) do
     t.index ["source_type", "source_id"], name: "index_activities_on_source"
   end
 
+  create_table "donations", force: :cascade do |t|
+    t.bigint "donor_id", null: false
+    t.bigint "event_id", null: false
+    t.decimal "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["donor_id"], name: "index_donations_on_donor_id"
+    t.index ["event_id"], name: "index_donations_on_event_id"
+  end
+
+  create_table "donor_achievements", force: :cascade do |t|
+    t.bigint "donor_id", null: false
+    t.bigint "achievement_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["achievement_id"], name: "index_donor_achievements_on_achievement_id"
+    t.index ["donor_id"], name: "index_donor_achievements_on_donor_id"
+  end
+
   create_table "donors", force: :cascade do |t|
     t.string "name"
     t.integer "type"
@@ -100,5 +119,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_08_165333) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "donations", "donors"
+  add_foreign_key "donations", "events"
+  add_foreign_key "donor_achievements", "achievements"
+  add_foreign_key "donor_achievements", "donors"
   add_foreign_key "events", "organizations"
 end
