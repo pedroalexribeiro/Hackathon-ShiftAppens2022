@@ -7,7 +7,7 @@ class ApplicationService
     new(*args, &block).call
   end
 
-  def initialize(opts = {})
+  def initialize(_opts = {})
     @errors = []
     @result = {}
   end

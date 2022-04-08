@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Donation < ApplicationRecord
+class Follower < ApplicationRecord
   belongs_to :donor
-  belongs_to :event
+  belongs_to :donor
 end
