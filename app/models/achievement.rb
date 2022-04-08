@@ -2,6 +2,6 @@
 
 class Achievement < ApplicationRecord
   # Donor relations to achievements
-  has_many :donors_achievement
-  has_many :donors, through: :donors_achievement
+  has_many :donor_achievements
+  has_many :donors, through: :donor_achievements, source: :achievement
 end
