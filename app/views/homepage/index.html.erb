@@ -1,2 +1,55 @@
-<h1>Homepage#index</h1>
-<p>Find me in app/views/homepage/index.html.erb</p>
+<html>
+    <head>
+        <title>Homepage</title>
+
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-9" style="background-color: red; min-height: 100vh;">
+                    
+                    <%= render 'partials/feed_post' %>
+
+                </div>
+                <div class="col-3" style="background-color: yellow;">
+                    
+                    <div id="user_section">
+                        <div class="row">
+                            <div class="col-4">
+    
+                            </div>
+                            <div class="col-8">
+                                <span>Marcos</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <span>Online for 30 minutes</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <span>+3 coins</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn btn-primary">Donate</button>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <span>total: 365 coins</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

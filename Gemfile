@@ -60,8 +60,11 @@ gem 'sassc-rails'
 gem 'image_processing', '~> 1.2'
 
 # Add bootstrap and jquery to the project
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap', '~> 5.1.3'
 gem 'jquery-rails'
+
+# Add fontawesome icons
+gem "font-awesome-rails"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
