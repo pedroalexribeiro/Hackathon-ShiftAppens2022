@@ -6,5 +6,5 @@ class Event < ApplicationRecord
 
   # Donations relations
   has_many :donations, dependent: :destroy
-  has_many :donators, class_name: 'Donor', through: :donations
+  has_many :donators, class_name: 'Donor', through: :donations, source: :donor
 end

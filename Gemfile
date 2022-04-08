@@ -35,6 +35,9 @@ gem 'redis', '~> 4.0'
 # Devise for login
 gem 'devise'
 
+# Rails admin to build the backoffice
+gem 'rails_admin', '~> 3.0'
+
 # rubocop to keep the code clean
 gem 'rubocop'
 gem 'rubocop-performance'
@@ -88,3 +91,4 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+gem "sassc-rails"

@@ -10,8 +10,8 @@ class Donor < ApplicationRecord
   has_one_attached :avatar, dependent: :destroy
   # Achivements relations
   has_many :donor_achievements, dependent: :destroy
-  has_many :achievements, through: :donor_achievements
+  has_many :achievements, through: :donor_achievements, source: :donor
   # Donations relations
   has_many :donations, dependent: :destroy
-  has_many :events, through: :donations
+  has_many :events, through: :donations, source: :event
 end
