@@ -13,9 +13,9 @@ Rails.application.routes.draw do
   authenticated :donor do
     root to: redirect('/donors/feed'), as: :donor_authenticated_root
   end
-  #unauthenticated do
+  # unauthenticated do
   #  root to: redirect('/'), as: :unauthenticated_root
-  #end
+  # end
 
   namespace :organizations do
     resources :events

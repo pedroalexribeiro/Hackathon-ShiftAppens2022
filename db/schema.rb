@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_08_185422) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_08_234800) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -103,6 +103,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_08_185422) do
     t.index ["organization_id"], name: "index_events_on_organization_id"
   end
 
+  create_table "favourites", force: :cascade do |t|
+    t.bigint "donor_id", null: false
+    t.bigint "organization_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["donor_id"], name: "index_favourites_on_donor_id"
+    t.index ["organization_id"], name: "index_favourites_on_organization_id"
+  end
+
+  create_table "followers", force: :cascade do |t|
+    t.bigint "follower_id", null: false
+    t.bigint "followee_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followee_id"], name: "index_followers_on_followee_id"
+    t.index ["follower_id"], name: "index_followers_on_follower_id"
+  end
+
   create_table "organizations", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -117,6 +135,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_08_185422) do
     t.index ["reset_password_token"], name: "index_organizations_on_reset_password_token", unique: true
   end
 
+  create_table "wallets", force: :cascade do |t|
+    t.integer "money"
+    t.string "entity_type", null: false
+    t.bigint "entity_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["entity_type", "entity_id"], name: "index_wallets_on_entity"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "donations", "donors"
@@ -124,4 +151,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_08_185422) do
   add_foreign_key "donor_achievements", "achievements"
   add_foreign_key "donor_achievements", "donors"
   add_foreign_key "events", "organizations"
+  add_foreign_key "favourites", "donors"
+  add_foreign_key "favourites", "organizations"
+  add_foreign_key "followers", "donors", column: "followee_id"
+  add_foreign_key "followers", "donors", column: "follower_id"
 end

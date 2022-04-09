@@ -67,7 +67,7 @@ gem 'bootstrap', '~> 5.1.3'
 gem 'jquery-rails'
 
 # Add fontawesome icons
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -91,4 +91,4 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-gem "sassc-rails"
+gem 'sassc-rails'

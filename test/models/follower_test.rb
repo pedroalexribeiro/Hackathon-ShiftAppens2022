@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class DonorAchievementsControllerTest < ActionDispatch::IntegrationTest
+class FollowerTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
