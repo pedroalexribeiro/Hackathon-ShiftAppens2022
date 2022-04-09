@@ -1,37 +1,98 @@
-<div class="row feed-profile" style="background-color: white; border-radius: 8px;">
+<div class="container-fluid p0">
 
-    <!-- BANNER INFO -->
     <div class="row">
-      <div class="col-12">
-        <img src="https://media.newyorker.com/photos/59095e9b019dfc3494e9fb43/master/pass/Frazier-Animal-Mascots-Climate-Change.jpg" class="profile-banner">
-      </div>
+        <div class="col" style="background-image: url('https://starecat.com/content/wp-content/uploads/enters-ugly-contest-judge-sorry-no-professionals-pakalu-papito.jpg'); height: 400px; background-size: cover; text-align: right;">
+        </div>
     </div>
 
-    <!-- USER INFO -->
     <div class="row">
-      <div class="row">
-          <div class="col-2">
-              <img src="https://w7.pngwing.com/pngs/419/552/png-transparent-caritas-archidiecezji-warmi%C5%84skiej-caritas-internationalis-caritas-diocesana-logo-caritas-italiana-others-angle-logo-business-thumbnail.png" class="feed-avatar">
-          </div>
+        <div class="col-4">
+            <div class="sticky-top">
+                
+                <!-- AVATAR & STUFF -->
+                <div class="row" style="margin: 32px 8px;">
+                    <div class="col-1"></div>
+                    <div class="col-4">
+                        <img src="https://pbs.twimg.com/profile_images/1104739030229348352/qOCWwK4Y.png" style="width: 100%; border-radius: 50%;">
+                    </div>
 
-          <div class="col-10 my-auto">
-              <div class="row">
-                  <h6>Cáritas</h6>
-              </div>
-              <div class="row">
-                  <span>Published at XXX</span>
-              </div>
-          </div>
-      </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col">
+                                <span>Bronze III</span>
+                            </div>
+                        </div>
 
-      <!-- Feed -->
-      <div class="row" style="margin-top: 16px;">
-          <!-- Bio -->
-          <div class="col-3">
-          </div>
+                        <div class="row">
+                            <div class="col">
+                                <h2 style="font-weight: bold;"><%= current_donor.name %></h2>
+                            </div>
+                        </div>
 
-          <!-- Activity -->
-          <div class="col-7"></div>
-      </div>
+                        <div class="row">
+                            <div class="col">
+                                <%= fa_icon 'map-marker' %>
+                                <span>Lisboa</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn-round" style="background-color: white;"><%= fa_icon 'heart', class: 'ico' %></button>
+                                <button class="btn-round" style="background-color: white;"><%= fa_icon 'heart', class: 'ico' %></button>
+                                <button class="btn-round" style="background-color: white;"><%= fa_icon 'heart', class: 'ico' %></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+
+                <!-- USER DESCRIPTION -->
+                <div class="row" style="margin-bottom: 32px;">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        Lorem ipsum dolor sit amet...
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h3>Export NFT</h3>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-2">
+                        <%= image_tag 'brazas1', style: 'width: 100%' %>
+                    </div>
+                    <div class="col-2">
+                        <%= image_tag 'brazas2', style: 'width: 100%' %>
+                    </div>
+                    <div class="col-2">
+                        <%= image_tag 'brazas3', style: 'width: 100%' %>
+                    </div>
+                    <div class="col-5"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-8" style="margin-top: 16px;">
+            <div class="row" style="margin-right: 4px; margin-bottom: 16px;">
+                <div class="col-9"></div>
+                <div class="col-3" style="text-align: right;">
+                    <%= link_to(edit_donors_profile_path(current_donor.id)) do %>
+                    <button class="btn-social">Edit Profile</button>
+                    <% end %>
+                </div>
+            </div>
+
+            <%= render 'donors/feed/partials/feed_post' %>
+        </div>
     </div>
+
 </div>
