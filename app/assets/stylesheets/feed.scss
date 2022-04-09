@@ -1,7 +1,6 @@
 @import "colors";
 
 #navbar {
-    padding: 24px 0;
     margin-right: 16px;
 }
 
@@ -47,7 +46,8 @@
 
 .feed-container {
     background-color: $almost-white;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 0 !important;
 }
 
 .feed-tab {

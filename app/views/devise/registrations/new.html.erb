@@ -85,23 +85,23 @@
                                 <div class="col-8" style="text-align: center;">
                                         <div class="field">
                                             <div class="field">
-                                                <%= f.text_field :name, placeholder: "Username", class: 'txt-auth' %>
+                                                <%= f.text_field :name, placeholder: "Username", class: 'txt-social' %>
                                             </div>
                                         </div>
                                     
                                         <div class="field">
-                                            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "E-mail", class: 'txt-auth' %>
+                                            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "E-mail", class: 'txt-social' %>
                                         </div>
 
                                         <div class="field">
-                                            <%= f.password_field :password, autocomplete: "new-password",  placeholder: "Password", class: 'txt-auth' %>
+                                            <%= f.password_field :password, autocomplete: "new-password",  placeholder: "Password", class: 'txt-social' %>
                                             <% if @minimum_password_length %>
                                             <em>(<%= @minimum_password_length %> characters minimum)</em>
                                             <% end %><br />
                                         </div>
 
                                         <div class="field">
-                                            <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm password", class: 'txt-auth' %>
+                                            <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm password", class: 'txt-social' %>
                                         </div>
                                     
                                         <% if devise_mapping.rememberable? %>

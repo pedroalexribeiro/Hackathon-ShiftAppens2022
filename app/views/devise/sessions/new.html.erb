@@ -80,11 +80,11 @@
                           <div class="col-2"></div>
                           <div class="col-8" style="text-align: center;">
                               <div class="field">
-                                <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "E-mail", class: 'txt-auth' %>
+                                <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "E-mail", class: 'txt-social' %>
                               </div>
                             
                               <div class="field">
-                                <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: 'txt-auth' %>
+                                <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: 'txt-social' %>
                               </div>
                             
                               <% if devise_mapping.rememberable? %>
