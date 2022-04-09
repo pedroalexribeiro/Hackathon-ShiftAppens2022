@@ -11,6 +11,6 @@ class Event < ApplicationRecord
   has_many :donators, class_name: 'Donor', through: :donations, source: :donor
 
   # Scope for better searches
-  # scope :local, includes(:races).where('races.prizes=?', 'medals')
+  scope :local, includes(:organization).where('races.prizes=?', 'medals')
   scope :global, -> { where(nil).order(created_at: :desc) }
 end

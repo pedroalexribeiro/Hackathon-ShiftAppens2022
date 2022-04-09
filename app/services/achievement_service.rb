@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class TransferMoneyService < ApplicationService
+class AchievementService < ApplicationService
   def initialize(opts = {})
     super(opts)
     @source = opts[:source]
