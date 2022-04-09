@@ -31,4 +31,7 @@ class Donor < ApplicationRecord
   # Favourite relations
   has_many :favourites, dependent: :destroy
   has_many :organizations, through: :favourites, source: :organization
+
+  # Activities Relations
+  has_many :activities, as: :source
 end

@@ -8,5 +8,12 @@ class Organization < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :events
+  # Events relations
+  has_many :events, dependent: :destroy
+
+  # Activities Relations
+  has_many :activities, as: :source
+
+  # Achivements Relations
+  has_many :achievements
 end

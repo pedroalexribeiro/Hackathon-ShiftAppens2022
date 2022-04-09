@@ -3,33 +3,27 @@
 class AchievementService < ApplicationService
   def initialize(opts = {})
     super(opts)
-    @source = opts[:source]
-    @target = opts[:target]
-    @amount = opts[:amount]
+    @entity                = opts[:entity]
+    @activity              = opts[:activity]
+    @achivements_to_unlock = []
   end
 
-  attr_reader :source, :target, :amount
+  attr_reader :entity, :activity, :achivements_to_unlock
 
   def call
-    ActiveRecord::Base.transaction do
-      validate_params
-      transfer_money
-    end
+    search_possible_achivements
+    unlock_achievements
     self
   end
 
   private
 
-  def validate_params
-    return if source && target && amount
-
-    error_message = 'Could not transfer any money! Changes were rolledback.'
-    @errors << error_message
-    raise error_message
+  def search_possible_achivements
+    _searchable_params = activity.category
+    @achivements_to_unlock = Achievement.where(nil)
   end
 
-  def transfer_money
-    source.wallet.withdrawal(amount)
-    target.wallet.deposit(amount)
+  def unlock_achievements
+    entity.achivements << achivements_to_unlock
   end
 end

@@ -5,9 +5,10 @@ class SearchEntitiesService < ApplicationService
     super(opts)
     @search_value  = params[:search_value]
     @filters       = params[:filters]
+    @search        = {}
   end
 
-  attr_reader :params
+  attr_reader :params, :search
 
   def call
     validate_params
@@ -31,22 +32,29 @@ class SearchEntitiesService < ApplicationService
   end
 
   def join_searches
-
+    @search[:full] = @search[:organization].merge(@search[:donor]).merge(@search[:event])
   end
 
   def order_result
-
+    @result[:list] = search[:full].sort_by(&:created_at)
   end
 
   def search_organizations
-    Organization.where(Organization.arel_table[:name].matches("%#{search_value}%"))
+    @search[:organization] = Organization.where(Organization.arel_table[:name].matches("%#{search_value}%"))
   end
 
   def search_donors
-    Donor.where(Donor.arel_table[:name].matches("%#{search_value}%"))
+    @search[:donor] = Donor.where(Donor.arel_table[:name].matches("%#{search_value}%"))
   end
 
   def search_events
-    Event.where(Event.arel_table[:name].matches("%#{search_value}%"))
+    @search[:event] = Event.where(Event.arel_table[:name].matches("%#{search_value}%"))
+  end
+
+  class ObjectWrapper
+    def initialize(opts = {})
+      @object     = opts[:object]
+      @created_at = @object.created_at
+    end
   end
 end
