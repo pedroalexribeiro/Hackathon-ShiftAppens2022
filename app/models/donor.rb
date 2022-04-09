@@ -36,4 +36,9 @@ class Donor < ApplicationRecord
   # Active Record Blob to save images
   has_one_attached :avatar, dependent: :destroy
   has_one_attached :banner, dependent: :destroy
+
+  enum type: {
+    individual: 0,
+    company: 1
+  }
 end

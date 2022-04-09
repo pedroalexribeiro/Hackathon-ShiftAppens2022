@@ -55,7 +55,7 @@
   <!-- ACTIONS -->
   <div class="row" style="margin-right: 4px;">
       <div class="col-3">
-          <button class="btn-social">Donate</button>
+        <%= link_to 'Donate', new_donors_donation_path(event_id: event.id), remote: true, class: 'btn btn-social' %>
       </div>
       
       <div class="col-7"></div>

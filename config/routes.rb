@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     # Except create to make not mess with devise create
     resources :profiles, except: [:create]
     # Only allow creating donations
-    resources :donations, only: [:create]
+    resources :donations, only: %i[new create]
     # Only allow accessing feed
     resources :feed, only: [:index]
     # Game list
