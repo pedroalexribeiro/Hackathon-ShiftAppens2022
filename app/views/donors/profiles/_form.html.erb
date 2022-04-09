@@ -18,7 +18,7 @@
 
   <div style="margin-bottom: 10px;">
     <%= form.label :type, style: "display: block" %>
-    <%= form.number_field :type, class: 'txt-social' %>
+    <%= form.select :type, Donor.types.keys.map { |w| [w.humanize, w] }, class: 'txt-social' %>
   </div>
 
   <div style="margin-bottom: 10px;">

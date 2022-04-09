@@ -5,7 +5,9 @@ module Donors
     before_action :set_donor, only: %i[show edit update destroy]
 
     # GET /donors/1 or /donors/1.json
-    def show; end
+    def show
+      @events = Organization.all.map(&:events).flatten.sort_by(&:created_at)
+    end
 
     # GET /donors/1/edit
     def edit; end
