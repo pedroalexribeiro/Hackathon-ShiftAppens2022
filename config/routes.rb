@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # Devise routes
   devise_for :organizations
-  devise_for :donors
+  devise_for :donors, controllers: { registrations: 'auth/registrations' }
 
   # Redirect when users are authenticated
   authenticated :organization do
