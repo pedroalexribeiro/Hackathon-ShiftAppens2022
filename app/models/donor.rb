@@ -8,8 +8,6 @@ class Donor < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # Active Record Blob to save images
-  has_one_attached :avatar, dependent: :destroy
   # Achivements relations
   has_many :donor_achievements, dependent: :destroy
   has_many :achievements, through: :donor_achievements, source: :donor
@@ -34,4 +32,8 @@ class Donor < ApplicationRecord
 
   # Activities Relations
   has_many :activities, as: :source
+
+  # Active Record Blob to save images
+  has_one_attached :avatar, dependent: :destroy
+  has_one_attached :banner, dependent: :destroy
 end

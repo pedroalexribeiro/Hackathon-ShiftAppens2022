@@ -16,4 +16,8 @@ class Organization < ApplicationRecord
 
   # Achivements Relations
   has_many :achievements
+
+  # Active Record Blob to save images
+  has_one_attached :avatar, dependent: :destroy
+  has_one_attached :banner, dependent: :destroy
 end

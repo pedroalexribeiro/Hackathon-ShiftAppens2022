@@ -2,4 +2,6 @@
 
 class DonorBaseController < ApplicationController
   before_action :authenticate_donor!, unless: :devise_controller?
+
+  layout 'feed'
 end
