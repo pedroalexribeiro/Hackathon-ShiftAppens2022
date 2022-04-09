@@ -1,2 +1,41 @@
 @import "colors";
 
+.auth-brand {
+    width: 256px;
+}
+
+#auth-info {
+    background: rgb(120,255,214);
+    background: linear-gradient(180deg, rgba(120,255,214,1) 0%, rgba(0,121,145,1) 100%);
+}
+
+.auth-thumbnail {
+    background-image: url(asset-path('seca.jpg'));
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.auth-form {
+    background-color: $almost-white;
+}
+
+.txt-auth {
+    border:none;
+    background-image:none;
+    background-color: white;
+    padding: 8px 0 8px 16px;
+    border-radius: 32px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    margin-bottom: 8px;
+    -webkit-box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+    width: 100%;
+
+    &:focus{
+        outline: none;
+    }
+}
