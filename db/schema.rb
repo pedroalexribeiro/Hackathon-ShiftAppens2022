@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_09_185201) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_09_202017) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -82,7 +82,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_09_185201) do
 
   create_table "donors", force: :cascade do |t|
     t.string "name"
-    t.integer "type"
+    t.integer "d_type"
     t.text "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -96,9 +96,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_09_185201) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.index ["d_type"], name: "index_donors_on_d_type"
     t.index ["email"], name: "index_donors_on_email", unique: true
     t.index ["reset_password_token"], name: "index_donors_on_reset_password_token", unique: true
-    t.index ["type"], name: "index_donors_on_type"
   end
 
   create_table "events", force: :cascade do |t|

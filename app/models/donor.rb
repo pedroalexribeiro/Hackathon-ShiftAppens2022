@@ -37,7 +37,7 @@ class Donor < ApplicationRecord
   has_one_attached :avatar, dependent: :destroy
   has_one_attached :banner, dependent: :destroy
 
-  enum type: {
+  enum d_type: {
     individual: 0,
     company: 1
   }

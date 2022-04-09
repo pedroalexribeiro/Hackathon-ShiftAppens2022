@@ -2,12 +2,19 @@
 
 module Donors
   class DonationsController < DonorBaseController
-    def new; end
+    def new
+      respond_to do |format|
+        format.js
+      end
+    end
 
     def create
       set_event
+      @service = TransferMoneyService.call(source: current_donor, target: @event, amount: params[:amount])
 
-      TransferMoneyService.call(source: current_donor, target: @event, amount: params[:amount])
+      respond_to do |format|
+        format.js
+      end
     end
 
     private
