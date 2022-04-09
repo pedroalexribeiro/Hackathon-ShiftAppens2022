@@ -31,6 +31,8 @@ Rails.application.routes.draw do
     resources :donations, only: [:create]
     # Only allow accessing feed
     resources :feed, only: [:index]
+    # Game list
+    resources :revenue, only: %i[index show], param: :slang
   end
 
   # Defines the root path route ("/")
