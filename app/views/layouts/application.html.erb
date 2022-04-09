@@ -15,6 +15,105 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <div class="row">
+
+          <!-- NAVBAR -->
+          <div class="col-9 feed-container">
+              <div class="row" id="navbar">
+                  <div class="col-3">
+                      <h1>D=</h1>
+                  </div>
+
+                  <div class="col-2 my-auto">
+                      <div class="input-group input-shadow">
+                          <input class="form-control border-end-0 border shadow-none" type="search" placeholder="Search..." id="txt_search" style="border-bottom-left-radius: 20px; border-top-left-radius: 20px;">
+                          <span class="input-group-append">
+                              <button class="btn btn-outline-secondary bg-white border-start-0 border-bottom-0 border ms-n5" type="button" style="border-bottom-right-radius: 20px; border-top-right-radius: 20px;">
+                                  <i class="fa fa-search"></i>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+
+                  <div class="col-2 my-auto">
+                      <button class="btn-navbar">Generate revenue</button>
+                  </div>
+
+                  <div class="col-2 my-auto">
+                      <button class="btn-navbar">...</button>
+                  </div>
+
+                  <div class="col-1"></div>
+
+                  <div class="col-1 my-auto">
+                      <button class="feed-tab">Global</button>
+                  </div>
+                  <div class="col-1 my-auto">
+                      <button class="feed-tab active">Local</button>
+                  </div>
+              </div>
+
+              
+              <%= yield %>
+          </div>
+
+          <!-- SIDEBAR -->
+          <div class="col-3" id="sidebar">
+              
+              <div id="user_section">
+                  <div class="row">
+                      <div class="col-3">
+                          <img src="https://pbs.twimg.com/profile_images/1104739030229348352/qOCWwK4Y.png" class="sidebar-avatar">
+                      </div>
+
+                      <div class="col-9">
+                          <div class="row">
+                              <div class="col-8">
+                                <%= link_to(donors_profile_path(current_donor.id), class: 'sidebar-username') do %>
+                                  <%= current_donor.name %>
+                                <% end %>
+                              </div>
+                              <div class="col-4 my-auto" style="text-align: right;">
+                                  <%= link_to(destroy_donor_session_path, method: :delete) do %>
+                                      <%= fa_icon('sign-out', style: 'color: white; font-size: 32px;') %>
+                                  <% end %>
+                              </div>
+                          </div>
+                          
+                          <div class="row">
+                              <div class="">
+                                  <span>Online for 30 minutes</span>
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class="col">
+                                  <span style="font-size: 20px;">+3 coins</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="row" style="margin-top: 64px;">
+                      <div class="col-2"></div>
+                      <div class="col-8">
+                          <button class="btn-social">Donate</button>
+                      </div>
+                      <div class="col-2"></div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-2"></div>
+                      <div class="col-8" style="text-align: center; margin-top: 8px;">
+                          <span>total: 365 coins</span>
+                      </div>
+                      <div class="col-2"></div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+    </div>
   </body>
 </html>
