@@ -61,6 +61,9 @@ Rails.application.configure do
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
+  # Remove vips as main processor images
+  config.active_storage.variant_processor = :mini_magick
+
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 

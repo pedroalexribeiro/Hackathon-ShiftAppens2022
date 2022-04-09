@@ -2,6 +2,8 @@
 
 module Donors
   class FeedController < DonorBaseController
-    def index; end
+    def index
+      @events = Organization.all.map(&:events).flatten.sort_by(&:created_at)
+    end
   end
 end
