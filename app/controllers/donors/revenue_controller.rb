@@ -7,13 +7,17 @@ module Donors
     def index; end
 
     # GET /donors/1 or /donors/1.json
-    def show; end
+    def show
+      respond_to do |format|
+        format.html { render :show, layout: false }
+      end
+    end
 
     private
 
     # Use callbacks to share common setup or constraints between actions.
     def set_game
-      @game = Game.find(params[:id])
+      @game = Game.find_by(slang: params[:slang])
     end
   end
 end
