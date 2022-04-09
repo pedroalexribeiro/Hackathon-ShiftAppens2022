@@ -17,8 +17,8 @@
   </div>
 
   <div style="margin-bottom: 10px;">
-    <%= form.label :type, style: "display: block" %>
-    <%= form.select(:type, Donor.types.keys.map { |w| [w.humanize, w] }, {}, {class: 'txt-social'}) %>
+    <%= form.label :d_type, style: "display: block" %>
+    <%= form.select(:d_type, Donor.d_types.keys.map { |w| [w.humanize, w] }, {}, {class: 'txt-social'}) %>
   </div>
 
   <div style="margin-bottom: 10px;">
