@@ -63,7 +63,6 @@
                   </div>
               </div>
 
-              
               <%= yield %>
           </div>
 
@@ -73,7 +72,9 @@
               <div id="user_section">
                   <div class="row">
                       <div class="col-3">
-                        <%= image_tag  current_donor.avatar, class: "sidebar-avatar" %>
+                        <% if current_donor.avatar.present? %>
+                            <%= image_tag  current_donor.avatar, class: "sidebar-avatar" %>
+                        <% end %>
                       </div>
 
                       <div class="col-9">
