@@ -16,7 +16,7 @@ module Donors
     def update
       respond_to do |format|
         if @donor.update(donor_params)
-          format.html { redirect_to donor_url(@donor), notice: 'Donor was successfully updated.' }
+          format.html { redirect_to donors_profile_url(@donor), notice: 'Donor was successfully updated.' }
           format.json { render :show, status: :ok, location: @donor }
         else
           format.html { render :edit, status: :unprocessable_entity }
