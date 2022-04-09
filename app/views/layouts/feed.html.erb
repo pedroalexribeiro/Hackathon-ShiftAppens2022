@@ -41,7 +41,7 @@
                   </div>
 
                   <div class="col-2 my-auto">
-                      <button class="btn-navbar">...</button>
+                      <button class="btn-navbar">Find organizations</button>
                   </div>
 
                   <div class="col-1"></div>
@@ -64,7 +64,7 @@
               <div id="user_section">
                   <div class="row">
                       <div class="col-3">
-                          <img src="https://pbs.twimg.com/profile_images/1104739030229348352/qOCWwK4Y.png" class="sidebar-avatar">
+                        <%= image_tag  current_donor.avatar, class: "sidebar-avatar" %>
                       </div>
 
                       <div class="col-9">
@@ -83,13 +83,13 @@
                           
                           <div class="row">
                               <div class="">
-                                  <span>Online for 30 minutes</span>
+                                  <span>Online for <%= distance_of_time_in_words(current_donor.last_sign_in_at, Time.now) %></span>
                               </div>
                           </div>
 
                           <div class="row">
                               <div class="col">
-                                  <span style="font-size: 20px;">+3 coins</span>
+                                  <span style="font-size: 20px;">+<%= pluralize(session[:money_since_loging], 'coin') %></span>
                               </div>
                           </div>
                       </div>
@@ -106,7 +106,7 @@
                   <div class="row">
                       <div class="col-2"></div>
                       <div class="col-8" style="text-align: center; margin-top: 8px;">
-                          <span>total: 365 coins</span>
+                          <span>total: <%= pluralize(current_donor.wallet.money, 'coin') %></span>
                       </div>
                       <div class="col-2"></div>
                   </div>
