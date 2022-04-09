@@ -1,13 +1,6 @@
 <html>
 	<head>
 		<style>
-            /* Load the flappybird font from an external source */
-            @font-face {
-                font-family: flappybird;
-                src: url('http://www.mediafont.com/storage/contents/3184/font.eot'); /* IE */ 
-                src: url('http://www.mediafont.com/storage/contents/3184/04B_19__.TTF'); /* non-IE */ 
-            }
-            
 			body{
 				margin: 0; /* Make sure the body has 0 margin initially */
 				width:100%; /* Define we're using full width of the browser */
@@ -26,7 +19,7 @@
                 padding-bottom: 2%;
                 
                 
-                background-image: url('http://flappybird.io/img/bird.png');
+                background-image: url("<%= image_url('blica.png') %>");
                 
                 background-size: 300%; /* Make the width 300% of the current width, so that only 1 frame fits and the other 2 frames are hidden */
 				
@@ -132,7 +125,7 @@
                 
                 display: none; /* Hide initially */
                 
-                font-family: flappybird; /* Use the flappybird font for the score */
+                /* font-family: flappybird;  Use the flappybird font for the score */
                 font-size: 2vw; /* Scale the font to 2% of viewport */
                 
                 color:white; /* White font */                
@@ -153,7 +146,7 @@
                                 
                 text-align: center; /* Horiziontally center the text */
                 
-                font-family: flappybird; /* Use the flappybird font for the score */
+                /* ; /* Use the flappybird font for the score */
                 font-size: 4vw; /* Scale the font to 2% of viewport */
                 
                 color:white; /* White font */                
@@ -188,7 +181,7 @@
             <!-- Inline CSS -->
             
             <div id="InstructionBox" style="position: absolute; left: 50%; display:none;">
-                <div style="position: relative; left: -50%; z-index: 150; font-family:flappybird; color:white; font-size: 2vw;" class="noSelect">
+                <div style="position: relative; left: -50%; z-index: 150; color:white; font-size: 2vw;" class="noSelect">
                     Click to Fly <br>
                     Space Bar to Reset <br>
                     "P" to Pause
