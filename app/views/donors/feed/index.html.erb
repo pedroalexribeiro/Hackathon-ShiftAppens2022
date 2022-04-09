@@ -63,7 +63,9 @@
                             <div class="col-9">
                                 <div class="row">
                                     <div class="col-8">
-                                        <span class="sidebar-username"><%= current_donor.name %></span>
+                                        <%= link_to(donors_profile_path(current_donor.id), class: 'sidebar-username') do %>
+                                        <%= current_donor.name %>
+                                        <% end %>
                                     </div>
                                     <div class="col-4 my-auto" style="text-align: right;">
                                         <%= link_to(destroy_donor_session_path, method: :delete) do %>
