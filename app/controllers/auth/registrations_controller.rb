@@ -1,14 +1,16 @@
 # frozen_string_literal: true
 
-class RegistrationsController < Devise::RegistrationsController
+module Auth
+  class RegistrationsController < Devise::RegistrationsController
 
-  protected
+    protected
 
-  def update_resource(resource, params)
-    if params[:donor][:password].blank? && params[:donor][:password_confirmation].blank?
-      resource.update_without_password(params)
-    else
-      resource.update(params)
+    def update_resource(resource, params)
+      if params[:donor][:password].blank? && params[:donor][:password_confirmation].blank?
+        resource.update_without_password(params)
+      else
+        resource.update(params)
+      end
     end
   end
 end
