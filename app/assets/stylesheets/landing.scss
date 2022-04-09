@@ -1,0 +1,55 @@
+@import "colors";
+
+#landing-navbar {
+    background-color: $light-green;
+}
+
+#landing-container-1 {
+    background: rgb(120,255,214);
+    background: linear-gradient(180deg, rgba(120,255,214,1) 0%, rgba(0,121,145,1) 100%);
+    height: 100vh;
+}
+
+#landing-container-2 {
+    background-color: white;
+    padding: 64px;
+    text-align: center;
+    color: $light-grey !important;
+}
+
+#landing-container-3 {
+    height: 100vh;
+
+    .row {
+        background-image: url(asset-path('seca.jpg'));
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+#landing-container-4 {
+    background: rgb(120,255,214);
+    background: linear-gradient(180deg, rgba(120,255,214,1) 0%, rgba(0,121,145,1) 100%);
+    height: 100vh;
+}
+
+#landing-container-5 {
+    background-color: white;
+    padding: 64px;
+    text-align: center;
+    color: $light-grey !important;
+}
+
+#landing-container-6 {
+    background: rgb(120,255,214);
+    background: linear-gradient(180deg, rgba(120,255,214,1) 0%, rgba(0,121,145,1) 100%);
+    height: 100vh;
+}
+
+#landing-container-7 {
+    background-color: white;
+    padding: 64px;
+    text-align: center;
+    color: $light-grey !important;
+}
