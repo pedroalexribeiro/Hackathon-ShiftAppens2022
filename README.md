@@ -1,11 +1,13 @@
-# Shift Appens 2022
+# ShiftAppens 2022
 
-## Idea
+## Description
 
-A nossa ideia é incentivar as pessoas a cooperar com associações (organizações sem fins lucraticos) a ajudar
-Sensibilizados pelo clima atual de problemas humanitários como guerra 
-Permitir às pessoas ajudar o próximo mais facilmente
-Tornar o processo de doar e ajudar mais rápido e permitir a qualquer um ajudar
+Rede social focada em fins humanísticos, utilizando as tecnologias de ponta para resolver os problemas do mundo atual.
+Um conceito inovador de rede social, direcionado ao prol comum ao invés da divisão.
+
+## Challenges
+- Desafio RedLight - Javascript ou Ruby on Rails
+- Desafio Subvisual
+- Desafio Mindera - Portugal: Web application with the best effort in accessibility
 
 Github: https://github.com/pedroalexribeiro/shiftappens2022
-

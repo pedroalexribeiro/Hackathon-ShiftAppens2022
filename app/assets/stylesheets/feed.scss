@@ -1,0 +1,124 @@
+@import "colors";
+
+#navbar {
+    padding: 24px 0;
+    margin-right: 16px;
+}
+
+.btn-navbar {
+    color: $dark-grey;
+    background-color: white;
+    width: 100%;
+    border: medium none;
+    border-spacing: 0;
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 20px;
+
+    -webkit-box-shadow: 4px 4px 16px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 4px 4px 16px 0px rgba(0,0,0,0.1);
+    box-shadow: 4px 4px 16px 0px rgba(0,0,0,0.1);
+}
+
+.input-shadow {
+    -webkit-box-shadow: 4px 4px 16px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 4px 4px 16px 0px rgba(0,0,0,0.1);
+    box-shadow: 4px 4px 16px 0px rgba(0,0,0,0.1);
+}
+
+#sidebar {
+    background: rgb(120,255,214);
+    background: linear-gradient(180deg, rgba(120,255,214,1) 0%, rgba(0,121,145,1) 100%);
+    padding: 32px;
+    color: white !important;
+}
+
+.sidebar-avatar {
+    min-width: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.sidebar-username {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.feed-container {
+    background-color: $almost-white;
+    height: 100vh;
+}
+
+.feed-tab {
+    background-color: transparent;
+    color: $dark-green !important;
+    width: 100%;
+
+    border: medium none;
+    border-spacing: 0;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 4px;
+    border-radius: 16px;
+    color: white;
+
+    &:hover {
+        color: white !important;
+        background-color: $dark-green;
+    }
+    &.active {
+        color: white !important;
+        background-color: $dark-green;
+    }
+}
+
+.feed-post {
+    padding: 16px;
+}
+
+.feed-avatar {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.feed-btn {
+    color: white !important;
+    background-color: $dark-green;
+    width: 100%;
+    border: medium none;
+    border-spacing: 0;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 4px;
+    border-radius: 16px;
+}
+
+.feed-thumbnail {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.btn-round {
+    background-color: $almost-white;
+    border: medium none;
+    border-spacing: 0;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 4px;
+    border-radius: 16px;
+    color: white;
+    width: 32px;
+    height: 32px;
+
+    &:hover {
+        background-color: $light-grey;
+
+        .ico {
+            color: $almost-white;
+        }
+    }
+
+    .ico {
+        color: $light-grey;
+    }
+}
