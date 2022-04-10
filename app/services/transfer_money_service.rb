@@ -5,7 +5,7 @@ class TransferMoneyService < ApplicationService
     super(opts)
     @source = opts[:source]
     @target = opts[:target]
-    @amount = opts[:amount]
+    @amount = opts[:amount].to_i
   end
 
   attr_reader :source, :target, :amount
@@ -16,16 +16,18 @@ class TransferMoneyService < ApplicationService
       transfer_money
     end
     self
+  rescue StandardError => e
+    @errors << e.message
+    self
   end
 
   private
 
   def validate_params
-    return if source && target && amount
+    return if source && target && amount && amount.positive?
 
     error_message = 'Could not transfer any money! Changes were rolledback.'
     @errors << error_message
-    raise error_message
   end
 
   def transfer_money

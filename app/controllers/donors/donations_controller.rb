@@ -2,6 +2,8 @@
 
 module Donors
   class DonationsController < DonorBaseController
+    before_action :set_event
+
     def new
       respond_to do |format|
         format.js
@@ -9,9 +11,9 @@ module Donors
     end
 
     def create
-      set_event
+      binding.pry
       @service = TransferMoneyService.call(source: current_donor, target: @event, amount: params[:amount])
-
+      binding.pry
       respond_to do |format|
         format.js
       end
