@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>BeSocial</title>
+        <title>be.social</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <%= csrf_meta_tags %>
         <%= csp_meta_tag %>
@@ -11,6 +11,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     </head>
     <body>
         <div class="container-fluid" id="landing-navbar">
@@ -50,16 +51,16 @@
             <div class="row align-items-center" style="margin-top: 16px;">
                 <div class="col-4"></div>
                 <div class="col-1">
-                    <button class="btn-round"><%= fa_icon 'heart', class: 'ico' %></button>
+                    <button class="btn-round"><%= fa_icon 'facebook-f', class: 'ico' %></button>
                 </div>
                 <div class="col-1">
-                    <button class="btn-round"><%= fa_icon 'heart', class: 'ico' %></button>
+                    <button class="btn-round"><%= fa_icon 'instagram', class: 'ico' %></button>
                 </div>
                 <div class="col-1">
-                    <button class="btn-round"><%= fa_icon 'heart', class: 'ico' %></button>
+                    <button class="btn-round"><%= fa_icon 'twitter', class: 'ico' %></button>
                 </div>
                 <div class="col-1">
-                    <button class="btn-round"><%= fa_icon 'heart', class: 'ico' %></button>
+                    <button class="btn-round"><%= fa_icon 'reddit-alien', class: 'ico' %></button>
                 </div>
                 <div class="col-4"></div>
             </div>
@@ -79,43 +80,74 @@
 
         <div class="container-fluid" id="landing-container-4">
             <div class="row align-items-center h-100">
+                <div class="col-3"></div>
                 <div class="col text-white" style="text-align: center;">
-                    <h2>How do organizations earn with BeSocial?</h2>
-                    <span>Lorem ipsum...</span>
+                    <h2 style="font-size: 32px; font-weight: bold;">How do organizations earn with be.social?</h2>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <span style="font-size: 24px;">Organizations have the ability to publish social campaigns for the causes they defend and pass the ball to the donors side. From here a donor can donate to the social campaigns or organizations they identify with.</span>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
                     <br/>
                     <button class="btn-social" style="width: 256px !important;">Register an organization</button>
                 </div>
+                <div class="col-3"></div>
             </div>
         </div>
 
         <div class="container-fluid" id="landing-container-5">
             <div class="row">
                 <div class="col">
-                    <span>Registered organizations</span>
+                    <span style="font-size: 24px; font-weight: bold;">Registered organizations</span>
                 </div>
             </div>
             <div class="row align-items-center" style="margin-top: 16px;">
                 <div class="col">
-                    <img src="">
+                    <%= image_tag 'LOGOS A PRETO 1.png', style: 'width: 100%;' %>
                 </div>
             </div>
         </div>
 
         <div class="container-fluid" id="landing-container-6">
             <div class="row align-items-center h-100">
+                <div class="col-3"></div>
                 <div class="col text-white" style="text-align: center;">
-                    <h2>Advantages of donating via BeSocial</h2>
-                    <span>Lorem ipsum...</span>
+                    <h2>Advantages of donating via be.social</h2>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <span style="font-size: 24px;">We empower citizens to donate to causes they identify with. With be.social you can easily browse a portfolio of organizations and campaigns and donate even if you don't have your own money. Each user is assigned a rank based on their contributions which represents their social help.</span>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <%= image_tag 'ranks home.png', style: 'width: 70%;' %>
+                    <br/>
+                    <br/>
+                    <br/>
                     <br/>
                     <button class="btn-social" style="width: 256px !important;">Sign in</button>
                 </div>
+                <div class="col-3"></div>
             </div>
         </div>
 
         <div class="container-fluid" id="landing-container-7">
             <div class="row">
-                <div class="col">
-                    <span>Social Coin</span>
+                <div class="col-2" style="text-align: left;">
+                    <%= image_tag 'moeda cores.png', style: 'width: 64px;' %>
+                    <br/>
+                    <br/>
+                    <span>Our currency</span>
+                    <br/>
+                    <span style="font-size: 24px;">Social Coin</span>
+                </div>
+                <div class="col"></div>
+                <div class="col-1 my-auto">
+                    <%= image_tag 'logo vert cores_preto.png', style: 'width: 100%;' %>
                 </div>
             </div>
         </div>
