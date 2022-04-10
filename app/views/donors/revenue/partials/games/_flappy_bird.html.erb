@@ -259,6 +259,16 @@
                     $('#FinalScore').html(CurrentScore); //Update the current score
                     $('#BestScore').html(Math.max(CurrentScore,cookieScore)); //Update the current score
                     $('#LostScoreScreen').slideDown(); //Have a nice slideDown for the score screen
+                    $.ajaxSetup({
+                        headers:
+                        { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }
+                    });
+                    $.post('/donors/revenue', { score: CurrentScore },    
+                        function(returnedData){
+                            console.log(returnedData);
+                    }).fail(function(){
+                        console.log("error");
+                    });
                 }
                 
                 function resetGame(){

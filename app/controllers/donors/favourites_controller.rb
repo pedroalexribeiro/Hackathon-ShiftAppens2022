@@ -5,6 +5,7 @@ module Donors
     before_action :set_event
 
     def create
+      @event.organization.favourites.delete()
       @service = TransferMoneyService.call(source: current_donor, target: @event, amount: params[:amount])
       respond_to do |format|
         format.js

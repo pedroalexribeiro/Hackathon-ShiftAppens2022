@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     # Only allow accessing feed
     resources :feed, only: [:index]
     # Game list
-    resources :revenue, only: %i[index show], param: :slang
+    resources :revenue, only: %i[index show create], param: :slang
   end
 
   # Defines the root path route ("/")
