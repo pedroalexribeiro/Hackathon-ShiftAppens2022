@@ -14,8 +14,13 @@ module Donors
 
     # PATCH/PUT /donors/1 or /donors/1.json
     def update
+      result = if params[:donor][:password].blank? && params[:donor][:password_confirmation].blank?
+                 @donor.update_without_password(donor_params)
+               else
+                 @donor.update(donor_params)
+               end
       respond_to do |format|
-        if @donor.update(donor_params)
+        if result
           format.html { redirect_to donors_profile_url(@donor), notice: 'Donor was successfully updated.' }
           format.json { render :show, status: :ok, location: @donor }
         else
