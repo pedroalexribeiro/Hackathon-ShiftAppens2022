@@ -3,17 +3,17 @@
 class SearchEntitiesService < ApplicationService
   def initialize(opts = {})
     super(opts)
-    @search_value  = params[:search_value]
-    @filters       = params[:filters]
+    @search_value  = opts[:search_value]
+    @filters       = opts[:filters]
     @search        = {}
   end
 
-  attr_reader :params, :search
+  attr_reader :search_value, :filters, :search
 
   def call
     validate_params
     search_objects
-    join_searches
+    # join_searches
     order_result
     self
   end
@@ -26,9 +26,9 @@ class SearchEntitiesService < ApplicationService
 
   # Make different objects searchable
   def search_objects
-    search_organizations if filter[:organization]
-    search_donors        if filter[:donor]
-    search_events        if filter[:event]
+    # search_organizations
+    # search_donors
+    search_events
   end
 
   def join_searches
@@ -36,7 +36,7 @@ class SearchEntitiesService < ApplicationService
   end
 
   def order_result
-    @result[:list] = search[:full].sort_by(&:created_at)
+    @result[:list] = search[:event].sort_by(&:created_at)
   end
 
   def search_organizations

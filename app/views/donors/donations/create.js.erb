@@ -1,6 +1,5 @@
 $('.modal').modal('hide');
 $('.modal-content').html('');
-<% binding.pry %>
 <% if @service.errors? %>
   <% flash[:notice] = @service.errors.join(', ') %>
 <% end %>
