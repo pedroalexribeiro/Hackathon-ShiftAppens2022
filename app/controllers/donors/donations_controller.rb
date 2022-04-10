@@ -13,7 +13,7 @@ module Donors
     def create
       @service = TransferMoneyService.call(source: current_donor, target: @event, amount: params[:amount])
       respond_to do |format|
-        format.js
+        format.html { redirect_to donors_feed_index_path }
       end
     end
 
