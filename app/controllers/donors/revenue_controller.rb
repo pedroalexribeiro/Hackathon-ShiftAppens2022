@@ -15,6 +15,14 @@ module Donors
       end
     end
 
+    def create
+      current_donor.wallet.deposit(params[:score].to_i)
+      session[:money_since_loging] += params[:score].to_i
+      respond_to do |format|
+        format.json { render json: { text: 'ok' } }
+      end
+    end
+
     private
 
     # Use callbacks to share common setup or constraints between actions.
