@@ -47,7 +47,6 @@
 .feed-container {
     background-color: $almost-white;
     min-height: 100vh;
-    padding: 0 !important;
 }
 
 .feed-tab {
@@ -110,4 +109,9 @@
     .ico {
         color: $light-grey;
     }
+}
+
+.lnk-logout {
+    color: white !important;
+    font-weight: bold;
 }

@@ -4,7 +4,9 @@ module Donors
   class RevenueController < DonorBaseController
     before_action :set_game, only: %i[show]
 
-    def index; end
+    def index
+      @games = Game.all
+    end
 
     # GET /donors/1 or /donors/1.json
     def show

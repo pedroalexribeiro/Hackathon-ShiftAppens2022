@@ -1,0 +1,48 @@
+<div class="col-4 card game-card">
+    <div class="row">
+        <div class="col">
+            <%= image_tag  game.banner, style: "width: 100%;" %>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <img src="">
+        </div>
+
+        <div class="col-8">
+            <div class="row">
+                <div class="co">
+                    <h3><%= game.name %></h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <span>Published at <%= game.created_at.strftime("%d-%m-%Y") %></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <span>by <%= game.publisher %></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <%= link_to donors_revenue_path('flappy_bird') do %>
+                <button class="btn-social" style="margin: 16px 0 16px 16px;">Play</button>
+            <% end %>
+        </div>
+        <div class="col"></div>
+        <div class="col-2 my-auto p0" style="text-align: right;">
+          <button class="btn-round"><%= fa_icon 'heart', class: 'ico' %></button>
+        </div>
+        <div class="col-2 my-auto p0" style="text-align: center;">
+            <button class="btn-round"><%= fa_icon 'paper-plane', class: 'ico' %></button>
+        </div>
+    </div>
+</div>
