@@ -17,4 +17,8 @@ class Organization < ApplicationRecord
   # Active Record Blob to save images
   has_one_attached :avatar, dependent: :destroy
   has_one_attached :banner, dependent: :destroy
+
+  has_many :favourites, dependent: :destroy
+
+  scope :local, ->(donor) { joins(:favourites).where(favourites: { donor: donor }) }
 end

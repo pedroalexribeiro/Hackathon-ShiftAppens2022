@@ -44,12 +44,14 @@
 
                 <div class="col-2 my-auto">
                     <div class="input-group input-shadow">
-                        <input class="form-control border-end-0 border shadow-none" type="search" placeholder="Search..." id="txt_search" style="border-bottom-left-radius: 20px; border-top-left-radius: 20px;">
-                        <span class="input-group-append">
-                            <button class="btn btn-outline-secondary bg-white border-start-0 border-bottom-0 border ms-n5" type="button" style="border-bottom-right-radius: 20px; border-top-right-radius: 20px;">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </span>
+                        <%= form_tag(donors_feed_index_path, method: :get) do %>
+                            <span class="input-group-append">
+                                <%= text_field_tag :name, params[:name], remote: true, placeholder: 'Search...', id: 'txt_search', style: 'border-bottom-left-radius: 20px; border-top-left-radius: 20px;', class: 'form-control border-end-0 border shadow-none' %>
+                                <%= button_tag({ class: 'btn btn-outline-secondary bg-white border-start-0 border-bottom-0 border ms-n5', style: 'border-bottom-right-radius: 20px; border-top-right-radius: 20px;' }) do %>
+                                    <i class="fa fa-search"></i>
+                                <% end %>
+                            </span>
+                        <% end %>
                     </div>
                 </div>
 
@@ -66,10 +68,10 @@
                 <div class="col-1"></div>
 
                 <div class="col-1 my-auto">
-                    <button class="feed-tab">Global</button>
+                    <%= link_to 'Global', donors_feed_index_path(scope: 'global'), class: "feed-tab #{ 'active' if params[:scope].nil? || params[:scope] == 'global'}" %>
                 </div>
                 <div class="col-1 my-auto">
-                    <button class="feed-tab active">Local</button>
+                    <%= link_to 'Local', donors_feed_index_path(scope: 'local'), class: "feed-tab #{ 'active' if params[:scope] == 'local'}" %>
                 </div>
             </div>
 
