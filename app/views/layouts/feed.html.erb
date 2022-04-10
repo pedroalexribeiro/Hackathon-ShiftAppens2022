@@ -34,7 +34,7 @@
         <div class="row">
 
         <!-- NAVBAR -->
-        <div class="col-9 feed-container">
+        <div class="col-9 feed-container <%= 'p0' if controller_name == 'profiles' && action_name=='show' %>">
             <div class="row" id="navbar">
                 <div class="col-3" style="text-align: center; padding: 32px 50px;">
                     <%= link_to root_path do %>
@@ -76,8 +76,8 @@
             <%= yield %>
         </div>
 
-          <!-- SIDEBAR -->
-          <div class="col-3" id="sidebar">
+        <!-- SIDEBAR -->
+        <div class="col-3 d-flex flex-column" id="sidebar">
               
             <div id="user_section">
                 <div class="row">
@@ -89,15 +89,10 @@
 
                     <div class="col-9">
                         <div class="row">
-                            <div class="col-8">
+                            <div class="col">
                             <%= link_to(donors_profile_path(current_donor.id), class: 'sidebar-username') do %>
                                 <%= current_donor.name %>
                             <% end %>
-                            </div>
-                            <div class="col-4 my-auto" style="text-align: right;">
-                                <%= link_to(destroy_donor_session_path, method: :delete) do %>
-                                    <%= fa_icon('sign-out', style: 'color: white; font-size: 32px;') %>
-                                <% end %>
                             </div>
                         </div>
                         
@@ -135,6 +130,23 @@
                     <div class="">
 
                     </div>
+                </div>
+            </div>
+
+            <div class="row flex-grow-1"></div>
+
+            <div class="row" style="margin-bottom: 16px;">
+                <div class="col" style="text-align: center;">
+                    <%= link_to(destroy_donor_session_path, method: :delete, class: 'lnk-logout') do %>
+                        <span>Log out</span>
+                        <%= fa_icon('sign-out', style: 'color: white; font-size: 24px;') %>
+                    <% end %>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col" style="text-align: center;">
+                    <span>Developed in ShiftAppens 2022</span>
                 </div>
             </div>
         </div>
