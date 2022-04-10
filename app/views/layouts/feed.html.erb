@@ -43,16 +43,16 @@
                 </div>
 
                 <div class="col-2 my-auto">
-                    <div class="input-group input-shadow">
-                        <%= form_tag(donors_feed_index_path, method: :get) do %>
+                    <%= form_tag(donors_feed_index_path, method: :get) do %>
+                        <div class="input-group input-shadow">
+                            <%= text_field_tag :name, params[:name], remote: true, placeholder: 'Search...', id: 'txt_search', style: 'border-bottom-left-radius: 20px; border-top-left-radius: 20px;', class: 'form-control border-end-0 border shadow-none' %>
                             <span class="input-group-append">
-                                <%= text_field_tag :name, params[:name], remote: true, placeholder: 'Search...', id: 'txt_search', style: 'border-bottom-left-radius: 20px; border-top-left-radius: 20px;', class: 'form-control border-end-0 border shadow-none' %>
                                 <%= button_tag({ class: 'btn btn-outline-secondary bg-white border-start-0 border-bottom-0 border ms-n5', style: 'border-bottom-right-radius: 20px; border-top-right-radius: 20px;' }) do %>
                                     <i class="fa fa-search"></i>
                                 <% end %>
                             </span>
-                        <% end %>
-                    </div>
+                        </div>
+                    <% end %>
                 </div>
 
                 <div class="col-2 my-auto">
