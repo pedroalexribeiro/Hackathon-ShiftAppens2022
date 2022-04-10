@@ -64,7 +64,7 @@ gem 'image_processing', '~> 1.2'
 
 # Add bootstrap and jquery to the project
 gem 'bootstrap', '~> 5.1.3'
-# gem 'jquery-rails'
+gem 'jquery-rails'
 
 # Add fontawesome icons
 gem 'font-awesome-rails'

@@ -2,6 +2,5 @@ $('.modal').modal('hide');
 $('.modal-content').html('');
 <% binding.pry %>
 <% if @service.errors? %>
-  $('html, body').animate({scrollTop: $('body').offset().top}, 600);
-  confirmCallback({class: 'error', message: '<%= @service.errors.join(', ') %>.'});
+  <% flash[:notice] = @service.errors.join(', ') %>
 <% end %>
